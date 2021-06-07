@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Icon, Label, Menu, Table } from "semantic-ui-react";
+import { Icon, Label, Menu, Segment, Table } from "semantic-ui-react";
 import { Button } from 'semantic-ui-react'
 import JobAdvertisementService from "../services/jobAdvertisementService";
 
@@ -13,7 +13,7 @@ export default function JobAdvertisementList() {
    })
 
   return (
-    <div>
+    <Segment>
       <Table celled>
         <Table.Header>
           <Table.Row>
@@ -41,6 +41,6 @@ export default function JobAdvertisementList() {
           ))}
         </Table.Body>
       </Table>
-    </div>
+    </Segment>
   );
 }

@@ -17,8 +17,8 @@ class ExampleMenu extends Component {
       <Menu color={color} inverted fixed="top" size="large">
         <Container>
           <Menu.Item
-            name="İş İlanlarını Görüntüle"
-            active={activeItem === "İş İlanlarını Görüntüle"}
+            name="Anasayfa"
+            active={activeItem === "Anasayfa"}
             onClick={this.handleItemClick}
             as={Link}
             to="/"
@@ -52,16 +52,13 @@ class ExampleMenu extends Component {
               active={activeItem === "İş İlanlarını Görüntüle"}
               onClick={this.handleItemClick}
               as={Link}
-              to="/isilanlari"
+              to="/is-ilanlari"
             >
               <Icon name="search"></Icon>
               İş İlanlarını Görüntüle
             </Menu.Item>
 
             <Menu.Item
-              name="Giris"
-              active={activeItem === "Giris"}
-              onClick={this.handleItemClick}
               as={Link}
               to="/"
             >

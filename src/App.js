@@ -6,6 +6,8 @@ import Dashboard from "./layouts/Dashboard";
 import Footer from "./layouts/Footer";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import JobAdvertisementList from "./pages/JobAdvertisementList";
+import AddJobSeeker from "./pages/AddJobSeeker";
+import AddEmployer from "./pages/AddEmployer";
 
 function App() {
   return (
@@ -16,8 +18,14 @@ function App() {
           <Route path="/" exact>
             <Dashboard></Dashboard>
           </Route>
-          <Route path='/isilanlari' component='JobAdvertisementList'>
+          <Route path='/is-ilanlari' component='JobAdvertisementList'>
             <JobAdvertisementList></JobAdvertisementList>
+          </Route>
+          <Route path='/is-arayan-kaydi' component='AddJobSeeker'>
+            <AddJobSeeker></AddJobSeeker>
+          </Route>
+          <Route path='/isveren-kaydi' component='AAddEmployer>'>
+            <AddEmployer></AddEmployer>
           </Route>
         </Container>
         <br />

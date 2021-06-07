@@ -1,16 +1,17 @@
 import React from "react";
 import { Button, Header, Icon, Segment } from "semantic-ui-react";
-import { Image } from 'semantic-ui-react'
-
+import { Image } from "semantic-ui-react";
+import { Link } from "react-router-dom";
 
 export default function Intro() {
   return (
     <div>
-      <Segment  placeholder>
+      <Segment placeholder>
         <Header>
-          <div align="center"> <Image
-            src='https://i.hizliresim.com/26wm4zh.png'
-          /></div>
+          <div align="center">
+            {" "}
+            <Image src="https://i.hizliresim.com/26wm4zh.png" />
+          </div>
           <h1>Human Resource Management System</h1>
           <h4>
             <a href="https://github.com/myagiz" target="blank">
@@ -23,12 +24,16 @@ export default function Intro() {
             ihtiyacınıza göre kayıt olmanız gerekmektedir.
           </h5>
         </Header>
-        <br/>
+        <br />
         <Segment.Inline>
-          <Button color="violet">İşveren Olarak Kayıt Ol</Button>
-          <Button color="black">İş Arayan Olarak Kayıt Ol</Button>
+          <Button color="violet" as={Link} to="/isveren-kaydi" >
+            İşveren Olarak Kayıt Ol
+          </Button>
+          <Button color="black" as={Link} to="/is-arayan-kaydi" >
+            İş Arayan Olarak Kayıt Ol
+          </Button>
         </Segment.Inline>
-        <br/>
+        <br />
       </Segment>
     </div>
   );
