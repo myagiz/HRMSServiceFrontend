@@ -32,7 +32,9 @@ class ExampleMenu extends Component {
           />
           <Menu.Menu position="right">
             <Menu.Item>
-              <Button color="violet" ><Icon name='search'></Icon> İş İlanlarını Görüntüle</Button>
+              <Button color="violet" ><Icon name='search'></Icon>
+               İş İlanlarını Görüntüle
+               </Button>
             </Menu.Item>
 
             <Dropdown item text="Giriş Yap">
