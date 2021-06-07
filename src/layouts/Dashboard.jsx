@@ -1,6 +1,7 @@
 import React from "react";
 import { Grid } from "semantic-ui-react";
 import JobAdvertisementList from "../pages/JobAdvertisementList";
+import Accordion from "./Accordion";
 import Intro from "./Intro";
 
 export default function Dashboard() {
@@ -10,6 +11,7 @@ export default function Dashboard() {
         <Grid.Row>
           <Grid.Column width="16">
             <Intro></Intro>
+            <Accordion></Accordion>
           </Grid.Column>
         </Grid.Row>
       </Grid>
