@@ -16,7 +16,7 @@ export default class AccordionExampleInverted extends Component {
     const { activeIndex } = this.state;
 
     return (
-      <Segment inverted>
+      <Segment inverted color='violet'>
         <h2>Sıkça Sorulan Sorular</h2>
         <Accordion inverted>
           <Accordion.Title

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Menu, Button, Dropdown } from "semantic-ui-react";
+import { Container, Menu, Button, Dropdown, Icon } from "semantic-ui-react";
 
 const colors = ["violet"];
 
@@ -31,6 +31,10 @@ class ExampleMenu extends Component {
             onClick={this.handleItemClick}
           />
           <Menu.Menu position="right">
+            <Menu.Item>
+              <Button color="violet" ><Icon name='search'></Icon> İş İlanlarını Görüntüle</Button>
+            </Menu.Item>
+
             <Dropdown item text="Giriş Yap">
               <Dropdown.Menu>
                 <Dropdown.Item>English</Dropdown.Item>
@@ -38,10 +42,7 @@ class ExampleMenu extends Component {
                 <Dropdown.Item>Spanish</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
-
-            <Menu.Item>
-              <Button >Kayıt Ol</Button>
-            </Menu.Item>
+            
           </Menu.Menu>
         </Container>
       </Menu>

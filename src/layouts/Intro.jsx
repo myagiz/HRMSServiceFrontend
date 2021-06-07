@@ -6,7 +6,7 @@ import { Image } from 'semantic-ui-react'
 export default function Intro() {
   return (
     <div>
-      <Segment placeholder>
+      <Segment  placeholder>
         <Header>
           <div align="center"> <Image
             src='https://i.hizliresim.com/26wm4zh.png'
