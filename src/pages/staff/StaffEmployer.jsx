@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { Segment, List } from "semantic-ui-react";
-import EmployerService from "../services/employerService";
+import EmployerService from "../../services/employerService";
 
 export default function StaffEmployer() {
+  const [employers, setEmployers] = useState([]);
 
-const [employers, setEmployers] = useState([],)
-
-useEffect(()=>{
-    let employerService=new EmployerService()
-    employerService.
-})
+  useEffect(() => {
+    let employerService = new EmployerService();
+    employerService
+      .getAllEmployers()
+      .then((result) => setEmployers(result.data.data));
+  });
 
   return (
     <div>
@@ -21,13 +22,29 @@ useEffect(()=>{
         <br />
         <div align="left">
           <List divided relaxed>
-            <List.Item>
-              <List.Icon name="github" size="large" verticalAlign="middle" />
-              <List.Content>
-                <List.Header as="a">Semantic-Org/Semantic-UI</List.Header>
-                <List.Description as="a">Updated 10 mins ago</List.Description>
-              </List.Content>
-            </List.Item>
+            {employers.map((employer) => (
+              <List.Item>
+                <List.Icon
+                  name="edit"
+                  color="green"
+                  size="large"
+                  verticalAlign="middle"
+                />
+                <List.Icon
+                  name="delete"
+                  color="red"
+                  size="large"
+                  verticalAlign="middle"
+                />
+                <List.Content>
+                  <List.Header as="a">
+                    {employer.companyName} / {employer.email} /{" "}
+                    {employer.phoneNumber}
+                  </List.Header>
+                  <List.Description as="a">{employer.website}</List.Description>
+                </List.Content>
+              </List.Item>
+            ))}
           </List>
         </div>
       </Segment>
