@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Icon, Label, Menu, Segment, Table } from "semantic-ui-react";
-import { Button } from 'semantic-ui-react'
+import { Segment, Table } from "semantic-ui-react";
 import JobAdvertisementService from "../services/jobAdvertisementService";
 
 export default function JobAdvertisementList() {

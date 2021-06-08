@@ -8,6 +8,9 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import JobAdvertisementList from "./pages/JobAdvertisementList";
 import AddJobSeeker from "./pages/AddJobSeeker";
 import AddEmployer from "./pages/AddEmployer";
+import StaffMain from "./pages/staff/StaffMain";
+import StaffJobSeeker from "./pages/staff/StaffJobSeeker";
+import StaffEmployer from "./pages/staff/StaffEmployer";
 
 function App() {
   return (
@@ -24,8 +27,17 @@ function App() {
           <Route path='/is-arayan-kaydi' component='AddJobSeeker'>
             <AddJobSeeker></AddJobSeeker>
           </Route>
-          <Route path='/isveren-kaydi' component='AAddEmployer>'>
+          <Route path='/isveren-kaydi' component='AddEmployer>'>
             <AddEmployer></AddEmployer>
+          </Route>
+          <Route path='/yonetici' component='StaffMain>'>
+            <StaffMain></StaffMain>
+          </Route>
+          <Route path='/yonetici/is-arayanlar' component='StaffJobSeeker>'>
+            <StaffJobSeeker></StaffJobSeeker>
+          </Route>
+          <Route path='/yonetici/isverenler' component='StaffEmployer>'>
+            <StaffEmployer></StaffEmployer>
           </Route>
         </Container>
         <br />

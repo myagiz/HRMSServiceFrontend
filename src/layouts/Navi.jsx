@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { Container, Menu, Button, Dropdown, Icon } from "semantic-ui-react";
+import { Container, Menu,Icon } from "semantic-ui-react";
 
 const colors = ["violet"];
 
