@@ -1,6 +1,5 @@
 import React from "react";
 import { Grid } from "semantic-ui-react";
-import JobAdvertisementList from "../pages/JobAdvertisementList";
 import Accordion from "./Accordion";
 import Intro from "./Intro";
 

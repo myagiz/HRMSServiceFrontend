@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Header, Icon, Segment } from "semantic-ui-react";
+import { Button, Header, Segment } from "semantic-ui-react";
 import { Image } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
