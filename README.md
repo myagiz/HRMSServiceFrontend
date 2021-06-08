@@ -15,7 +15,7 @@
 
 ## İlk görseller
 <br/>
-https://user-images.githubusercontent.com/64231904/121201236-0a0ca480-c87d-11eb-8b1a-6ab6d9202444.png
+![Anasayfa](https://user-images.githubusercontent.com/64231904/121201236-0a0ca480-c87d-11eb-8b1a-6ab6d9202444.png)
 <br/>
 ![İş arayan HRMS Kayıt Formu](https://user-images.githubusercontent.com/64231904/121201309-1a248400-c87d-11eb-8d83-504ac8517a34.png)
 <br/>
