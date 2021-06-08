@@ -11,6 +11,7 @@ import AddEmployer from "./pages/AddEmployer";
 import StaffMain from "./pages/staff/StaffMain";
 import StaffJobSeeker from "./pages/staff/StaffJobSeeker";
 import StaffEmployer from "./pages/staff/StaffEmployer";
+import StaffJobAdvertisement from "./pages/staff/StaffJobAdvertisement";
 
 function App() {
   return (
@@ -38,6 +39,9 @@ function App() {
           </Route>
           <Route path='/yonetici/isverenler' component='StaffEmployer>'>
             <StaffEmployer></StaffEmployer>
+          </Route>
+          <Route path='/yonetici/is-ilanlari' component='StaffJobAdvertisement>'>
+            <StaffJobAdvertisement></StaffJobAdvertisement>
           </Route>
         </Container>
         <br />
