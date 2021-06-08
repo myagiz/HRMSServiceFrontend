@@ -13,15 +13,15 @@
 <br/>
 
 
-## İlk görseller
+## Görseller
 <br/>
-![Anasayfa](https://user-images.githubusercontent.com/64231904/121201236-0a0ca480-c87d-11eb-8b1a-6ab6d9202444.png)
+<img src="https://user-images.githubusercontent.com/64231904/121201236-0a0ca480-c87d-11eb-8b1a-6ab6d9202444.png" />
 <br/>
-![İş arayan HRMS Kayıt Formu](https://user-images.githubusercontent.com/64231904/121201309-1a248400-c87d-11eb-8d83-504ac8517a34.png)
+<img src="https://user-images.githubusercontent.com/64231904/121201309-1a248400-c87d-11eb-8d83-504ac8517a34.png"/>
 <br/>
-![işveren HRMS Kayıt Formu](https://user-images.githubusercontent.com/64231904/121201657-5c4dc580-c87d-11eb-8766-3164d4576d60.png)
+<img src="https://user-images.githubusercontent.com/64231904/121201657-5c4dc580-c87d-11eb-8766-3164d4576d60.png"/>
 <br/>
-![Yönetici - İş İlanları](https://user-images.githubusercontent.com/64231904/121201736-6a034b00-c87d-11eb-8728-9c4ec1ae0882.png)
+<img src="https://user-images.githubusercontent.com/64231904/121201736-6a034b00-c87d-11eb-8728-9c4ec1ae0882.png"/>
 <br/>
-![Yönetici - İşverenler](https://user-images.githubusercontent.com/64231904/121201774-738cb300-c87d-11eb-98d4-a561d310b62a.png)
+<img src="https://user-images.githubusercontent.com/64231904/121201774-738cb300-c87d-11eb-98d4-a561d310b62a.png"/>
 
