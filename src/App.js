@@ -13,6 +13,7 @@ import StaffJobSeeker from "./pages/staff/StaffJobSeeker";
 import StaffEmployer from "./pages/staff/StaffEmployer";
 import StaffJobAdvertisement from "./pages/staff/StaffJobAdvertisement";
 import StaffCV from "./pages/staff/StaffCV";
+import JobSeekerMain from "./pages/jobSeeker/JobSeekerMain";
 
 function App() {
   return (
@@ -46,6 +47,9 @@ function App() {
           </Route>
           <Route path='/yonetici/ozgecmisler' component='StaffCV'>
             <StaffCV></StaffCV>
+          </Route>
+          <Route path='/aday' component='JobSeekerMain'>
+            <JobSeekerMain></JobSeekerMain>
           </Route>
         </Container>
         <br />

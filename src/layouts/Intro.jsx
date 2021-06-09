@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 export default function Intro() {
   return (
     <div>
-      <Segment placeholder>
+      <Segment placeholder color="violet">
         <Header>
           <div align="center">
             {" "}
