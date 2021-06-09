@@ -1,5 +1,6 @@
 import React from "react";
-import { Grid, Segment, Form, Image, Button, List } from "semantic-ui-react";
+import { Grid, Segment, Image, Button, List } from "semantic-ui-react";
+import { Link } from "react-router-dom";
 
 export default function JobSeekerCVMaker() {
   return (
@@ -8,7 +9,7 @@ export default function JobSeekerCVMaker() {
         <h3>Özgeçmişler</h3>
       </div>
       <div align="right">
-      <Button color="violet">Özgeçmiş Oluştur</Button>
+      <Button color="violet" as={Link} to="/aday/ozgecmis-olustur">Özgeçmiş Oluştur</Button>
       </div>
       <br />
       <Grid>
