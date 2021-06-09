@@ -14,6 +14,9 @@ import StaffEmployer from "./pages/staff/StaffEmployer";
 import StaffJobAdvertisement from "./pages/staff/StaffJobAdvertisement";
 import StaffCV from "./pages/staff/StaffCV";
 import JobSeekerMain from "./pages/jobSeeker/JobSeekerMain";
+import JobSeekerProfile from "./pages/jobSeeker/JobSeekerProfile";
+import JobSeekerCV from "./pages/jobSeeker/JobSeekerCV";
+import JobSeekerCreateCV from "./pages/jobSeeker/JobSeekerCreateCV";
 
 function App() {
   return (
@@ -50,6 +53,15 @@ function App() {
           </Route>
           <Route path='/aday' component='JobSeekerMain'>
             <JobSeekerMain></JobSeekerMain>
+          </Route>
+          <Route path='/aday/profil' component='JobSeekerProfile'>
+           <JobSeekerProfile></JobSeekerProfile>
+          </Route>
+          <Route path='/aday/ozgecmisler' component='JobSeekerCV'>
+           <JobSeekerCV></JobSeekerCV>
+          </Route>
+          <Route path='/aday/ozgecmis-olustur' component='JobSeekerCreateCV'>
+           <JobSeekerCreateCV></JobSeekerCreateCV>
           </Route>
         </Container>
         <br />
