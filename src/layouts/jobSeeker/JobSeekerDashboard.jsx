@@ -1,33 +1,26 @@
-import React from 'react'
-import { Grid, Segment, Menu, Icon, Header} from "semantic-ui-react";
+import React from "react";
+import { Grid, Segment, Menu, Icon, Header } from "semantic-ui-react";
 import { Image } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
 export default function JobSeekerDashboard() {
-    return (
-        <div>
+  return (
+    <div>
       <Grid>
         <Grid.Row>
           <Grid.Column width="2">
             <Menu icon="labeled" vertical>
-              <Menu.Item 
-              name="gamepad"
-              as={Link}
-              to="/aday">
+              <Menu.Item name="gamepad" as={Link} to="/aday">
                 <Icon name="home" color="violet" />
                 <b> Anasayfa </b>
               </Menu.Item>
 
-              <Menu.Item name="Profil">
+              <Menu.Item name="Profil" as={Link} to="/aday/profil">
                 <Icon name="id card outline" color="blue" />
                 <b> Profil </b>
               </Menu.Item>
 
-              <Menu.Item
-                name="video camera"
-                as={Link}
-                to="/yonetici/isverenler"
-              >
+              <Menu.Item name="video camera" as={Link} to="/aday/ozgecmisler">
                 <Icon name="info" color="red" />
                 <b> Özgeçmişler </b>
               </Menu.Item>
@@ -35,7 +28,7 @@ export default function JobSeekerDashboard() {
               <Menu.Item
                 name="video play"
                 as={Link}
-                to="/yonetici/is-arayanlar"
+                to="/aday/basvurulan-ilanlar"
               >
                 <Icon name="newspaper" color="green" />
                 <b> Başvurulan İlanlar</b>
@@ -44,7 +37,7 @@ export default function JobSeekerDashboard() {
               <Menu.Item
                 name="Özgeçmişler"
                 as={Link}
-                to="/yonetici/ozgecmisler"
+                to="/aday/ayarlar"
               >
                 <Icon name="settings" color="pink" />
                 <b> Ayarlar</b>
@@ -71,5 +64,5 @@ export default function JobSeekerDashboard() {
         </Grid.Row>
       </Grid>
     </div>
-    )
+  );
 }
