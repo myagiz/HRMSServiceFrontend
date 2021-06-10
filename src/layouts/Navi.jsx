@@ -1,83 +1,39 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
+import { Container, Icon, Menu } from "semantic-ui-react";
+import SignedOut from "./SignedOut";
+import SignedIn from "./SignedIn";
+import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
-import { Container, Menu,Icon } from "semantic-ui-react";
 
-const colors = ["violet"];
+export default function Navi() {
+  const [isAuthenticated, setIsAuthenticated] = useState(true);
+  const history = useHistory();
+  function handleSignOut(params) {
+    setIsAuthenticated(false);
+    history.push("/");
+  }
+  function handleSignIn(params) {
+    setIsAuthenticated(true);
+    history.push("/aday/profil");
+  }
 
-class ExampleMenu extends Component {
-  state = { activeItem: "home" };
-
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name });
-
-  render() {
-    const { color } = this.props;
-    const { activeItem } = this.state;
-
-    return (
-      <Menu color={color} inverted fixed="top" size="large">
+  return (
+    <div>
+      <Menu inverted fixed="top">
         <Container>
-          <Menu.Item
-            name="Anasayfa"
-            active={activeItem === "Anasayfa"}
-            onClick={this.handleItemClick}
-            as={Link}
-            to="/"
-          >
-            <Icon name="home"></Icon>
-            Anasayfa
-          </Menu.Item>
-          <Menu.Item
-            name="Kariyer Rehberi"
-            active={activeItem === "Kariyer Rehberi"}
-            onClick={this.handleItemClick}
-            as={Link}
-            to="/"
-          >
-            <Icon name="paperclip"></Icon>
-            Kariyer Rehberi
-          </Menu.Item>
-          <Menu.Item
-            name="Pozisyon Rehberi"
-            active={activeItem === "Pozisyon Rehberi"}
-            onClick={this.handleItemClick}
-            as={Link}
-            to="/"
-          >
-            <Icon name="lightbulb outline"></Icon>
-            Pozisyon Rehberi
-          </Menu.Item>
-          <Menu.Menu position="right">
-            <Menu.Item
-              name="İş İlanlarını Görüntüle"
-              active={activeItem === "İş İlanlarını Görüntüle"}
-              onClick={this.handleItemClick}
-              as={Link}
-              to="/is-ilanlari"
-            >
-              <Icon name="search"></Icon>
-              İş İlanlarını Görüntüle
-            </Menu.Item>
+          <Menu.Item as={Link} to="/"><Icon name="home"></Icon>Anasayfa</Menu.Item>
+          <Menu.Item><Icon name="bolt"></Icon>Kariyer Rehberi</Menu.Item>
+          <Menu.Item><Icon name="search"></Icon> İş İlanlarını Görüntüle</Menu.Item>
 
-            <Menu.Item
-              as={Link}
-              to="/"
-            >
-              <Icon name="sign in"></Icon>
-              Giriş
-            </Menu.Item>
+          <Menu.Menu position="right">
+            {isAuthenticated ? (
+              <SignedIn signOut={handleSignOut}></SignedIn>
+            ) : (
+              <SignedOut signIn={handleSignIn}></SignedOut>
+            )}
           </Menu.Menu>
         </Container>
       </Menu>
-    );
-  }
+    </div>
+  );
 }
-
-const MenuExampleColoredInvertedMenus = () => {
-  const menus = colors.map((color) => (
-    <ExampleMenu color={color} key={color} />
-  ));
-
-  return <div>{menus}</div>;
-};
-
-export default MenuExampleColoredInvertedMenus;
