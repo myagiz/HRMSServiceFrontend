@@ -31,9 +31,6 @@ function App() {
           <Route path='/is-ilanlari' component='JobAdvertisementList'>
             <JobAdvertisementList></JobAdvertisementList>
           </Route>
-          <Route path='/is-arayan-kaydi' component='AddJobSeeker'>
-            <AddJobSeeker></AddJobSeeker>
-          </Route>
           <Route path='/isveren-kaydi' component='AddEmployer'>
             <AddEmployer></AddEmployer>
           </Route>
@@ -58,13 +55,13 @@ function App() {
           <Route path='/aday/profil' component='JobSeekerProfile'>
            <JobSeekerProfile></JobSeekerProfile>
           </Route>
-          <Route path='/aday/ozgecmisler' component='JobSeekerCV'>
+          <Route  path='/aday/ozgecmisler' component='JobSeekerCV'>
            <JobSeekerCV></JobSeekerCV>
           </Route>
           <Route path='/aday/ozgecmis-olustur' component='JobSeekerCreateCV'>
            <JobSeekerCreateCV></JobSeekerCreateCV>
           </Route>
-          <Route path='/aday-kayit' component={JobSeekerRegister}>
+          <Route path='/is-arayan-kaydi' component={JobSeekerRegister}>
            <JobSeekerRegister></JobSeekerRegister>
           </Route>
         </Container>

@@ -7,23 +7,32 @@ import * as Yup from "yup";
 export default function JobSeekerRegister() {
   const SignupSchema = Yup.object().shape({
     firstName: Yup.string()
-      .min(2, "Çok kısa bir isim girdiniz !")
-      .max(50, "Çok uzun bir isim girdiniz!")
+      .min(2, "Min. 2 karakter giriniz !")
+      .max(50, "Max. 50 karakter giriniz !")
       .required("Bu alan boş bırakılamaz !"),
     lastName: Yup.string()
-      .min(2, "Çok kısa bir soyadı girdiniz !")
-      .max(50, "Çok uzun bir soyadı girnizi !")
+      .min(2, "Min. 2 karakter giriniz !")
+      .max(50, "Max. 50 karakter giriniz !")
       .required("Bu alan boş bırakılamaz !"),
     email: Yup.string()
       .email("Geçersiz email adresi")
       .required("Bu alan boş bırakılamaz !"),
     identityNumber: Yup.string()
       .min(11, "11 karakter giriniz !")
-      .max(11, "11 karakter giriniz !"),
+      .max(11, "11 karakter giriniz !")
+      .required("Bu alan boş bırakılamaz !"),
+    password: Yup.string()
+      .min(6, "Min. 6 karakter giriniz !")
+      .max(30, "Max 30 karakter giriniz !")
+      .required("Bu alan boş bırakılamaz !"),
+    passwordRepeat: Yup.string()
+      .min(6, "Min. 6 karakter giriniz !")
+      .max(50, "Max. 50 karakter giriniz !")
+      .required("Bu alan boş bırakılamaz !"),
   });
 
   return (
-    <Segment color="violet">
+    <Segment color="violet" padded>
       <br />
       <div>
         <h2>
@@ -37,6 +46,7 @@ export default function JobSeekerRegister() {
           firstName: "",
           lastName: "",
           email: "",
+          identityNumber: "",
         }}
         validationSchema={SignupSchema}
         onSubmit={(values) => {
@@ -145,26 +155,36 @@ export default function JobSeekerRegister() {
                 type="password"
                 placeholder="Şifrenizi giriniz"
               />
+            </Form.Group>
+            <div align="left">
               {errors.password && touched.password ? (
-                <div>
-                  <Icon name="warning sign"></Icon>
-                  {errors.password}
+                <div style={{ color: "red" }}>
+                  <b>
+                    <Icon name="warning sign"></Icon>
+                    {errors.password}
+                  </b>{" "}
                 </div>
               ) : null}
-            </Form.Group>
+            </div>
+            <br />
             <Form.Group widths="equal">
               <Field
                 name="passwordRepeat"
                 type="password"
                 placeholder="Şifrenizi tekrar giriniz"
               />
+            </Form.Group>
+            <div align="left">
               {errors.passwordRepeat && touched.passwordRepeat ? (
-                <div>
-                  <Icon name="warning sign"></Icon>
-                  {errors.passwordRepeat}
+                <div style={{ color: "red" }}>
+                  <b>
+                    <Icon name="warning sign"></Icon>
+                    {errors.passwordRepeat}
+                  </b>{" "}
                 </div>
               ) : null}
-            </Form.Group>
+            </div>
+            <br />
             <Button positive attached="bottom" type="submit">
               İş Arayan Kayıt Formunu Gönderiniz
             </Button>
