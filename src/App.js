@@ -18,6 +18,7 @@ import JobSeekerProfile from "./pages/jobSeeker/JobSeekerProfile";
 import JobSeekerCV from "./pages/jobSeeker/JobSeekerCV";
 import JobSeekerCreateCV from "./pages/jobSeeker/JobSeekerCreateCV";
 import JobSeekerRegister from "./pages/jobSeeker/JobSeekerRegister";
+import EmployerMain from "./pages/employer/EmployerMain";
 
 function App() {
   return (
@@ -63,6 +64,9 @@ function App() {
           </Route>
           <Route path='/is-arayan-kaydi' component={JobSeekerRegister}>
            <JobSeekerRegister></JobSeekerRegister>
+          </Route>
+          <Route path='/firma' component={EmployerMain}>
+           <EmployerMain></EmployerMain>
           </Route>
         </Container>
         <br />

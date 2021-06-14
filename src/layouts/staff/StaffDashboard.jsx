@@ -14,7 +14,7 @@ export default function StaffDashboard() {
               name="gamepad"
               as={Link}
               to="/yonetici">
-                <Icon name="home" color="violet" />
+                <Icon name="home" color="orange" />
                 <b> Anasayfa </b>
               </Menu.Item>
 
@@ -61,13 +61,13 @@ export default function StaffDashboard() {
             </Menu>
           </Grid.Column>
           <Grid.Column width="14">
-            <Segment color="violet">
+            <Segment color="orange">
               <Header>
                 <div align="center">
                   {" "}
                   <Image src="https://i.hizliresim.com/26wm4zh.png" />
                 </div>
-                <h1>HRMS Yönetici Sayfası</h1>
+                <h1 style={{ color: "orange" }}>HRMS Yönetici Sayfası</h1>
                 <h5>
                   Yönetici sayfasını sol taraftaki panellerden rahatça
                   kullanabilirsiniz.Sıkıntı oluşan durumlarda bizimle iletişime
@@ -76,7 +76,7 @@ export default function StaffDashboard() {
               </Header>
               <br />
               <Segment.Inline>
-                <Button color="violet">Yetkili Email Adresi</Button>
+                <Button color="orange">Yetkili Email Adresi</Button>
               </Segment.Inline>
               <br />
             </Segment>
