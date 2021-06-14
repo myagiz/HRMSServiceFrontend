@@ -1,6 +1,6 @@
 import React from "react";
 import { Formik, Field } from "formik";
-import { Form, Segment, Icon, Button, Message } from "semantic-ui-react";
+import { Form, Segment, Icon, Button} from "semantic-ui-react";
 
 import * as Yup from "yup";
 

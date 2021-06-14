@@ -1,5 +1,5 @@
 import React from "react";
-import { Segment, Form,Button } from "semantic-ui-react";
+import { Segment, Form, Button } from "semantic-ui-react";
 
 export default function AdvertisementCity() {
   return (
@@ -12,7 +12,7 @@ export default function AdvertisementCity() {
         </Form.Field>
         <div align="right">
           <Button color="blue" size="small">
-           Şehir Ekle
+            Şehir Ekle
           </Button>
         </div>
       </Segment>
