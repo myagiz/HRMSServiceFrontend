@@ -17,6 +17,7 @@ import JobSeekerMain from "./pages/jobSeeker/JobSeekerMain";
 import JobSeekerProfile from "./pages/jobSeeker/JobSeekerProfile";
 import JobSeekerCV from "./pages/jobSeeker/JobSeekerCV";
 import JobSeekerCreateCV from "./pages/jobSeeker/JobSeekerCreateCV";
+import JobSeekerRegister from "./pages/jobSeeker/JobSeekerRegister";
 
 function App() {
   return (
@@ -62,6 +63,9 @@ function App() {
           </Route>
           <Route path='/aday/ozgecmis-olustur' component='JobSeekerCreateCV'>
            <JobSeekerCreateCV></JobSeekerCreateCV>
+          </Route>
+          <Route path='/aday-kayit' component={JobSeekerRegister}>
+           <JobSeekerRegister></JobSeekerRegister>
           </Route>
         </Container>
         <br />
