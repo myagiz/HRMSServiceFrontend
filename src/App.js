@@ -6,7 +6,6 @@ import Dashboard from "./layouts/Dashboard";
 import Footer from "./layouts/Footer";
 import { BrowserRouter as Router, Route} from "react-router-dom";
 import JobAdvertisementList from "./pages/JobAdvertisementList";
-import AddJobSeeker from "./pages/AddJobSeeker";
 import AddEmployer from "./pages/AddEmployer";
 import StaffMain from "./pages/staff/StaffMain";
 import StaffJobSeeker from "./pages/staff/StaffJobSeeker";
@@ -19,6 +18,7 @@ import JobSeekerCV from "./pages/jobSeeker/JobSeekerCV";
 import JobSeekerCreateCV from "./pages/jobSeeker/JobSeekerCreateCV";
 import JobSeekerRegister from "./pages/jobSeeker/JobSeekerRegister";
 import EmployerMain from "./pages/employer/EmployerMain";
+import EmployerAdvertisement from "./pages/employer/EmployerAdvertisement";
 
 function App() {
   return (
@@ -67,6 +67,9 @@ function App() {
           </Route>
           <Route path='/firma' component={EmployerMain}>
            <EmployerMain></EmployerMain>
+          </Route>
+          <Route path='/firma/is-ilani-yayinla' component={EmployerAdvertisement}>
+           <EmployerAdvertisement></EmployerAdvertisement>
           </Route>
         </Container>
         <br />
