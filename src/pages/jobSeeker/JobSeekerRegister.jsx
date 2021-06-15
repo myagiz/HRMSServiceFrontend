@@ -1,23 +1,59 @@
-import React from "react";
+import React, { useState } from "react";
 import { Formik, Field } from "formik";
-import { Form, Segment, Icon, Button} from "semantic-ui-react";
+import { Form, Segment, Icon, Button } from "semantic-ui-react";
+import axios from "axios";
 
 import * as Yup from "yup";
 
 export default function JobSeekerRegister() {
+  const url = "http://localhost:8080/api/jobseekers/add";
+  const [data, setData] = useState({
+    name: "",
+    surName: "",
+    identificationNumber: "",
+    birthday: "",
+    email: "",
+    password: "",
+    passwordRepeat: "",
+  });
+
+  function handle(e) {
+    const newData = { ...data };
+    newData[e.target.id] = e.target.value;
+    setData(newData);
+    console.log(newData);
+  }
+
+  function submit(e) {
+    e.preventDefault();
+    axios
+      .post(url, {
+        name: "",
+        surName: "",
+        identificationNumber: "",
+        birthday: "",
+        email: "",
+        password: "",
+        passwordRepeat: "",
+      })
+      .then((result) => {
+        console.log(result.data);
+      });
+  }
+
   const SignupSchema = Yup.object().shape({
-    firstName: Yup.string()
+    name: Yup.string()
       .min(2, "Min. 2 karakter giriniz !")
       .max(50, "Max. 50 karakter giriniz !")
       .required("Bu alan boş bırakılamaz !"),
-    lastName: Yup.string()
+    surName: Yup.string()
       .min(2, "Min. 2 karakter giriniz !")
       .max(50, "Max. 50 karakter giriniz !")
       .required("Bu alan boş bırakılamaz !"),
     email: Yup.string()
       .email("Geçersiz email adresi")
       .required("Bu alan boş bırakılamaz !"),
-    identityNumber: Yup.string()
+    identificationNumber: Yup.string()
       .min(11, "11 karakter giriniz !")
       .max(11, "11 karakter giriniz !")
       .required("Bu alan boş bırakılamaz !"),
@@ -29,6 +65,7 @@ export default function JobSeekerRegister() {
       .min(6, "Min. 6 karakter giriniz !")
       .max(50, "Max. 50 karakter giriniz !")
       .required("Bu alan boş bırakılamaz !"),
+    birthday: Yup.date().required("Bu alan boş bırakılamaz !"),
   });
 
   return (
@@ -43,33 +80,48 @@ export default function JobSeekerRegister() {
 
       <Formik
         initialValues={{
-          firstName: "",
-          lastName: "",
+          name: "",
+          surName: "",
+          identificationNumber: "",
+          birthday: "",
           email: "",
-          identityNumber: "",
+          password: "",
+          passwordRepeat: "",
         }}
         validationSchema={SignupSchema}
-        onSubmit={(values) => {
-          // same shape as initial values
+        onSubmit={(values, { resetForm, setSubmitting }) => {
           console.log(values);
+          setTimeout(() => {
+            resetForm();
+          }, 2000);
         }}
       >
-        {({ errors, touched }) => (
-          <Form>
+        {({
+          values,
+          errors,
+          handleChange,
+          handleSubmit,
+          handleReset,
+          dirty,
+          touched,
+          isSubmitting,
+        }) => (
+          <Form onSubmit={(e) => submit(e)}>
             <Form.Group widths="equal">
               <Field
-                name="firstName"
+                name="name"
+                id="name"
                 type="text"
                 placeholder="Adınızı giriniz"
               />
             </Form.Group>
             <div align="left">
               {" "}
-              {errors.firstName && touched.firstName ? (
+              {errors.name && touched.name ? (
                 <div style={{ color: "red" }}>
                   <b>
                     <Icon name="warning sign"></Icon>
-                    {errors.firstName}
+                    {errors.name}
                   </b>
                 </div>
               ) : null}
@@ -77,18 +129,19 @@ export default function JobSeekerRegister() {
             <br />
             <Form.Group widths="equal">
               <Field
-                name="lastName"
+                name="surName"
                 type="text"
                 placeholder="Soyadınızı giriniz"
+                id="surName"
               />
             </Form.Group>
             <div align="left">
               {" "}
-              {errors.lastName && touched.lastName ? (
+              {errors.surName && touched.surName ? (
                 <div style={{ color: "red" }}>
                   <b>
                     <Icon name="warning sign"></Icon>
-                    {errors.lastName}
+                    {errors.surName}
                   </b>
                 </div>
               ) : null}
@@ -96,28 +149,33 @@ export default function JobSeekerRegister() {
             <br />
             <Form.Group widths="equal">
               <Field
-                name="identityNumber"
+                name="identificationNumber"
                 type="number"
                 placeholder="T.C kimlik numaranızı giriniz"
+                id="identificationNumber"
               />
             </Form.Group>
             <div align="left">
               {" "}
-              {errors.identityNumber && touched.identityNumber ? (
+              {errors.identificationNumber && touched.identificationNumber ? (
                 <div style={{ color: "red" }}>
                   <b>
                     <Icon name="warning sign"></Icon>
-                    {errors.identityNumber}
+                    {errors.identificationNumber}
                   </b>{" "}
                 </div>
               ) : null}
             </div>
             <br />
+            <div align="left">
+              <label>Doğum Tarihiniz</label>
+            </div>
             <Form.Group widths="equal">
               <Field
                 name="birthday"
-                type="text"
+                type="date"
                 placeholder="Doğum tarihinizi giriniz (Gün / Ay / Yıl)"
+                id="birthday"
               />
             </Form.Group>
             <div align="left">
@@ -136,6 +194,7 @@ export default function JobSeekerRegister() {
                 name="email"
                 type="email"
                 placeholder="Email adresinizi giriniz"
+                id="email"
               />
             </Form.Group>
             <div align="left">
@@ -154,6 +213,7 @@ export default function JobSeekerRegister() {
                 name="password"
                 type="password"
                 placeholder="Şifrenizi giriniz"
+                id="password"
               />
             </Form.Group>
             <div align="left">
@@ -172,6 +232,7 @@ export default function JobSeekerRegister() {
                 name="passwordRepeat"
                 type="password"
                 placeholder="Şifrenizi tekrar giriniz"
+                id="passwordRepeat"
               />
             </Form.Group>
             <div align="left">
